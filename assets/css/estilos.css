@@ -1,0 +1,30 @@
+body {
+  background-image: url("../css/ignorar/5201-183786533_small.mp4");
+}
+.card {
+  height: 150px;
+  width: 300px;
+  background-color: #666;
+  border-radius: 20px;
+  display: none;
+}
+
+#formulario {
+  height: 300px;
+  width: 500px;
+  background-color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-image: url("./ignorar/giphy.gif");
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
