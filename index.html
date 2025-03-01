@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +7,24 @@
     <link rel="stylesheet" href="./assets/css/imports.css" />
   </head>
   <body>
-    <div class="card"></div>
-
-    <form action="" id="formulario">
-      <input type="text" placeholder="Dime de tu personaje" required/> <input type="text" placeholder="Ingresa videojuego" required/> <input type="submit" />
-    </form>
+    <main>
+      <form action="" id="formulario">
+        <input
+          type="text"
+          placeholder="Dime de tu personaje"
+          id="nombre"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Ingresa videojuego"
+          id="juego"
+          required
+        />
+        <input type="submit" id="btn" value="Agregar" />
+      </form>
+      <section id="cards"></section>
+    </main>
+    <script src="./Js/data.js"></script>
   </body>
 </html>
