@@ -1,30 +1,24 @@
+:root {
+  --oneColor: #ff69b4;
+}
 body {
-  background-image: url("../css/ignorar/5201-183786533_small.mp4");
-}
-.card {
-  height: 150px;
-  width: 300px;
-  background-color: #666;
-  border-radius: 20px;
-  display: none;
+  background-image: url("./ignorar/original-0beb51678c448a983247ecaad0dcad43.webp");
 }
 
-#formulario {
-  height: 300px;
-  width: 500px;
-  background-color: #666;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@media (max-width: 533px) {
+  #formulario {
+    width: 90%;
+    height: min(300px, 80vh);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+  }
 
-  background-image: url("./ignorar/giphy.gif");
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat;
+  input[type="submit"] {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+  }
 }
-
