@@ -10,16 +10,18 @@ let jugadores = JSON.parse(localStorage.getItem("jugadores") || "[]");
 boton.addEventListener("click", (ev) => guardarJugador(ev));
 
 const guardarJugador = (ev) => {
-  // mirar si existe o no el jugador (por nombre)
-  // hacer lo de abajo  si no existe
-
   ev.preventDefault();
-  console.log("Guardando jugadores");
-  let nuevoJugador = { nombre: inp1.value, juego: inp2.value };
-  jugadores.push(nuevoJugador);
-  localStorage.setItem("jugadores", JSON.stringify(jugadores));
-  renderizarJugador(nuevoJugador);
+  if (jugadores.find((j) => j.nombre === inp1.value) !== undefined) {
+    alert("Ya existe este jugador " + inp1.value);
+  } else {
+    let nuevoJugador = { nombre: inp1.value, juego: inp2.value };
+    jugadores.push(nuevoJugador);
+    localStorage.setItem("jugadores", JSON.stringify(jugadores));
+    renderizarJugador(nuevoJugador);
+  }
 };
+// mirar si existe o no el jugador (por nombre)
+// hacer lo de abajo  si no existe
 
 const borrarJugador = (ev) => {
   ev.preventDefault();
@@ -55,3 +57,4 @@ const renderizarJugadores = () => {
 };
 
 renderizarJugadores();
+
