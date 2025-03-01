@@ -1,10 +1,13 @@
-
 .card {
   height: 150px;
   width: 300px;
-  background-color: #666;
+  background-size: cover;
   border-radius: 20px;
+  background-image: url("./ignorar/cuadro.png");
   /* display: none; */
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.314);
 }
 
 #formulario {
@@ -24,7 +27,7 @@
   background-repeat: no-repeat;
 }
 
-input[type="submit"] {
+.rosa {
   background-color: var(--oneColor);
   color: rgb(0, 0, 0);
   font-size: 17px;
@@ -35,11 +38,10 @@ input[type="submit"] {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-input[type="submit"]:hover {
+.rosa:hover {
   background-color: var(--oneColor);
 }
-input[type="submit"]:active {
+.rosa:active {
   box-shadow: 3px 3px 0px black;
   transform: translate(3px, 3px);
 }
-

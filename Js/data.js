@@ -25,12 +25,16 @@ const guardarJugador = (ev) => {
 
 const borrarJugador = (ev) => {
   ev.preventDefault();
-  // console.log(ev.target.parentElement);
-  let nombreJugador = ev.target.parentElement.textContent;
+  console.log(ev.target.parentElement);
+  let nombreJugador = ev.target.parentElement.innerText;
+  nombreJugador = nombreJugador.slice(0, nombreJugador.length - 1);
   console.log(nombreJugador);
-  jugadores = jugadores.filter((actual) => actual.nombre !== nombreJugador);
-  sectCard.removeChild(ev.target.parentElement);
+  jugadores = jugadores.filter(
+    (actual) => actual.nombre !== nombreJugador.trim()
+  );
+  console.log(jugadores);
   localStorage.setItem("jugadores", JSON.stringify(jugadores));
+  sectCard.removeChild(ev.target.parentElement);
 };
 
 const renderizarJugador = (j) => {
@@ -41,7 +45,8 @@ const renderizarJugador = (j) => {
 
   // luego el boton borrar
   let x = document.createElement("button");
-
+  x.classList.add("rosa");
+  x.textContent = `X`;
   x.addEventListener("click", (ev) => borrarJugador(ev));
 
   divJ.appendChild(x); // luego al card le pongo como hijo el boton
@@ -57,4 +62,3 @@ const renderizarJugadores = () => {
 };
 
 renderizarJugadores();
-
