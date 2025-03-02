@@ -3,30 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/imports.css" />
+    <title>¡pillame!</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+
+        background-repeat: no-repeat;
+        background-image: url("./assets/css/ignorar/original-0beb51678c448a983247ecaad0dcad43.webp");
+        /* overflow: hidden; */
+      }
+
+      button {
+        position: absolute;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color:#ff69b4;
+        color: rgb(0, 0, 0);
+        font-size: 17px;
+        font-weight: bold;
+        padding: 0px 15px;
+        border: 3px solid black;
+        box-shadow: 5px 5px 0px black;
+        transition: all 0.2s ease-in-out;
+
+        button:hover {
+          background-color: var(--oneColor);
+        }
+        .rosa:active {
+          box-shadow: 3px 3px 0px black;
+          transform: translate(3px, 3px);
+        }
+      }
+    </style>
   </head>
   <body>
-    <main>
-      <form action="" id="formulario">
-        <input
-          type="text"
-          placeholder="Dime de tu personaje"
-          id="nombre"
-          required
-        />
-        <input
-          type="text"
-          placeholder="Ingresa videojuego"
-          id="juego"
-          required
-        />
-        <input type="submit" class="rosa"  id="btn" value="Agregar" />
-      </form>
-      <section id="cards">
+    <button id="boton">pulsa para entrar</button>
 
-      </section>
-    </main>
-    <script src="./Js/data.js"></script>
+    <script>
+      const boton = document.getElementById("boton");
+      let intentos = 0;
+
+      function moverBoton() {
+        if (intentos < 5) {
+          const mueveX =
+            Math.random() * (window.innerWidth - boton.clientWidth);
+          const mueveY =
+            Math.random() * (window.innerHeight - boton.clientHeight);
+
+          boton.style.left = `${mueveX}px`;
+          boton.style.top = `${mueveY}px`;
+
+          intentos++;
+        } else {
+          boton.removeEventListener("mouseenter", moverBoton);
+          boton.textContent = "jiji ahora si";
+        }
+      }
+
+      boton.addEventListener("mouseenter", moverBoton);
+
+      boton.addEventListener("click", () => {
+        if (intentos >= 5) {
+          window.location.href = "./oculto.html";
+        }
+      });
+    </script>
   </body>
 </html>

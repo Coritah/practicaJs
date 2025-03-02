@@ -1,8 +1,14 @@
 :root {
   --oneColor: #ff69b4;
+
 }
 body {
   background-image: url("./ignorar/original-0beb51678c448a983247ecaad0dcad43.webp");
+}
+* {
+  font-family: "Iceland", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @media (max-width: 533px) {
@@ -16,7 +22,7 @@ body {
     padding: 15px;
   }
 
-  input[type="submit"] {
+ .rosa {
     width: 100%;
     font-size: 15px;
     padding: 10px;
