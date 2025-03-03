@@ -1,13 +1,14 @@
+// **CAPTURA DE ELEMENTOS**
+
 const inp1 = document.getElementById("nombre");
 const inp2 = document.getElementById("juego");
 const boton = document.getElementById("btn");
 const sectCard = document.getElementById("cards");
-
-// {nombre: 'pepe', juego: 'mario'}
+const selectForm = document.getElementById("formulario");
 
 let jugadores = JSON.parse(localStorage.getItem("jugadores") || "[]");
 
-boton.addEventListener("click", (ev) => guardarJugador(ev));
+selectForm.addEventListener("submit", (ev) => guardarJugador(ev));
 
 const guardarJugador = (ev) => {
   ev.preventDefault();
@@ -22,16 +23,13 @@ const guardarJugador = (ev) => {
     localStorage.setItem("jugadores", JSON.stringify(jugadores));
     renderizarJugador(nuevoJugador);
   }
+  selectForm.reset();
 };
-// mirar si existe o no el jugador (por nombre)
-// hacer lo de abajo  si no existe
 
 const borrarJugador = (ev) => {
   ev.preventDefault();
 
   console.log(ev.target.parentElement);
-  //   let nombreJugador = ev.target.parentElement.innerText;
-  //   nombreJugador = nombreJugador.slice(0, nombreJugador.length - 1);
   let nombreJugador = ev.target.dataset.nombre;
   console.log(nombreJugador);
   jugadores = jugadores.filter(
@@ -43,23 +41,18 @@ const borrarJugador = (ev) => {
 };
 
 const renderizarJugador = (j) => {
-  // primero el card
   let divJ = document.createElement("div");
   divJ.className = "card";
-//   divJ.classList.add = "mostrar";
-  divJ.innerHTML = `<p>Player: ${j.nombre}</p> <p> Game: ${j.juego} </p>`;
-  //   agregar una p para ejuego ****************
 
-  // luego el boton borrar
+  divJ.innerHTML = `<p>Player: ${j.nombre}</p> <p> Game: ${j.juego} </p>`;
+
   let x = document.createElement("button");
   x.classList.add("rosa");
   x.textContent = `X`;
   x.dataset.nombre = j.nombre;
   x.addEventListener("click", (ev) => borrarJugador(ev));
 
-  divJ.appendChild(x); // luego al card le pongo como hijo el boton
-
-  // por ultimo añado el card (que ya tiene el boton dentro) al section
+  divJ.appendChild(x);
   sectCard.appendChild(divJ);
 };
 

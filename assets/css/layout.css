@@ -1,26 +1,22 @@
-/* .content {
-  background-color: aquamarine;
-} */
+
 .container {
   width: 800px;
   max-height: 133px;
-  position: absolute;
-  top: 500px;
-  left: 350px;
+  position: fixed;
+  top: 52%;
+  left: 50%;
   padding: 35px;
   display: flex;
-  overflow-x: auto; /* Para que el scroll solo aparezca cuando sea necesario */
-  white-space: nowrap; /* Evita que el contenido se divida en varias líneas */
+  overflow-x: auto;
+  white-space: nowrap;
+  transform: translate(-50%, 0);
 }
 #cards {
-  display: flex; /* Para que los elementos se coloquen en fila */
-  gap: 10px; /* Espacio entre las cards */
+  display: flex;
+  gap: 10px;
 }
 .container::-webkit-scrollbar {
-  height: var(
-    --width,
-    15px
-  ); /* Cambié "width" por "height" para scrollbar horizontal */
+  height: var(--width, 15px);
   background: #3333335d;
 }
 
@@ -42,7 +38,6 @@
   background-size: cover;
   border-radius: 20px;
   background-image: url("./ignorar/cuadro.png");
-  /* display: none; */
   background-position: center;
   background-color: rgba(0, 0, 0, 0.314);
   color: gold;
@@ -53,8 +48,7 @@
   text-align: center;
   align-content: center;
   font-size: 20px;
-  /* display: flex; */
-  /* transform: translateX(-400px); */
+
 
   .rosa {
     position: absolute;
@@ -62,9 +56,7 @@
     left: 242px;
   }
 }
-/* .mostrar{
-  transform: translateX(0);
-} */
+
 #formulario {
   height: 300px;
   width: 500px;
@@ -74,7 +66,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  position: absolute;
+  position: fixed;
   transform: translate(-50%, -50%);
   background-image: url("./ignorar/giphy.gif");
   background-size: cover;
@@ -94,7 +86,7 @@
   transition: all 0.2s ease-in-out;
 }
 .rosa:hover {
-  background-color: var(--oneColor);
+  background-color: yellowgreen;
 }
 .rosa:active {
   box-shadow: 3px 3px 0px black;

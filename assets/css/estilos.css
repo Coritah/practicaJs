@@ -1,7 +1,4 @@
-:root {
-  --oneColor: #ff69b4;
 
-}
 body {
   background-image: url("./ignorar/original-0beb51678c448a983247ecaad0dcad43.webp");
 }
@@ -10,21 +7,31 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-
-@media (max-width: 533px) {
-  #formulario {
-    width: 90%;
-    height: min(300px, 80vh);
+@media (max-width: 800px) {
+  main #formulario {
+    top: 22%;
+  }
+  main .container {
+    width: auto;
+    max-height: 321px;
     position: fixed;
-    top: 50%;
+    top: 69%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
- .rosa {
-    width: 100%;
-    font-size: 15px;
-    padding: 10px;
+  #cards {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; /
   }
+
+  .card {
+    width: 100%; 
+    height: auto; 
+}
 }
