@@ -16,7 +16,7 @@ const guardarJugador = (ev) => {
     jugadores.find((j) => j.nombre === inp1.value) !== undefined ||
     inp1.value === ""
   ) {
-    alert("No puedes ejecutar esta acción❌ " + inp1.value);
+    alert("❌Ya hay un usuario con este nombre: " + inp1.value) ;
   } else {
     let nuevoJugador = { nombre: inp1.value, juego: inp2.value };
     jugadores.push(nuevoJugador);
