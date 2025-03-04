@@ -1,6 +1,11 @@
 
 body {
-  background-image: url("./ignorar/original-0beb51678c448a983247ecaad0dcad43.webp");
+  background-image: url("https://iili.io/33v9e6B.md.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+    height: 100vh; 
+
 }
 * {
   font-family: "Iceland", serif;
